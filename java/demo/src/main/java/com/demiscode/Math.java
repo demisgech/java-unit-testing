@@ -13,6 +13,10 @@ public class Math {
         return (a > b) ? a : b;
     }
 
+    public boolean isOdd(int number) {
+        return number % 2 == 1;
+    }
+
     public List<Integer> getOddNumbers(int limit) {
         List<Integer> oddNumbers = new ArrayList<>();
         for (var i = 0; i <= limit; i++)

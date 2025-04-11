@@ -1,6 +1,7 @@
 package com.demiscode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -8,6 +9,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Math Tests")
 public class MathTests {
@@ -68,6 +72,32 @@ public class MathTests {
         var result = math.max(10, 10);
 
         assertEquals(10, result);
+    }
+
+    // Parametrized Test
+
+    @ParameterizedTest
+    @ValueSource(ints = { 1, 3, 5 })
+    public void isOddWhenCalledShouldReturnTrueIfGivenValueSatisfiesTheCondition(int number) {
+        var result = math.isOdd(number);
+
+        assertTrue(result);
+    }
+
+    @ParameterizedTest
+    @CsvSource({ "1, 2, 3", "-3,4,1", "10,20,30" })
+    public void addWhenCalledShouldReturnSumOfArguments(double a, double b, double expected) {
+        var result = math.add(a, b);
+
+        assertEquals(expected, result);
+    }
+
+    @ParameterizedTest
+    @CsvSource({ "2,1,2", "1,2,2", "1,1,1" })
+    public void maxWhenCalledShouldReturnGreaterArgument(double a, double b, double expected) {
+        var result = math.max(a, b);
+
+        assertEquals(expected, result);
     }
 
 }
