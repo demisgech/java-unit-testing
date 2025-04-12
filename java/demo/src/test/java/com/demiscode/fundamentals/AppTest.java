@@ -1,8 +1,10 @@
-package com.demiscode;
+package com.demiscode.fundamentals;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import com.demiscode.fundamentals.Calculator;
 
 public class AppTest {
     @Test

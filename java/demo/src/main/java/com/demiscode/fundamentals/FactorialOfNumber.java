@@ -1,4 +1,4 @@
-package com.demiscode;
+package com.demiscode.fundamentals;
 
 public class FactorialOfNumber {
     public int getFactorialOf(int number) {

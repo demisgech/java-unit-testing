@@ -1,4 +1,4 @@
-package com.demiscode;
+package com.demiscode.fundamentals;
 
 public class Calculator {
     public static double add(double x, double y) {
