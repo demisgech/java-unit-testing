@@ -1,12 +1,15 @@
 package com.demiscode;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -100,4 +103,37 @@ public class MathTests {
         assertEquals(expected, result);
     }
 
+    // Disabling Test
+    @Test
+    @Disabled("Because I wanted to!")
+    public void disabled() {
+        System.out.println("Disabled test");
+    }
+
+    // Trustworthy test
+    // it's a test that give the right value
+    // it is a test that test the right behavior not implementation
+
+    @Test
+    public void trustworthyTest() {
+        assertNotNull(math); // Not a trustworthy test
+        var result = 1 + 2;
+        assertEquals(3, result); // Testing the right behavior
+    }
+
+    @Test
+    public void getOddNumbers_LimitIsGreaterThanZero_ReturnOddNumbersUpToLimit() {
+        var result = math.getOddNumbers(5);
+
+        assertThat(result).isNotEmpty(); // Too general
+
+        assertThat(result).containsExactly(1, 3, 5); // too specific
+        // assertThat(result).containsExactly(3, 1, 5); // fail cause it is too specific
+
+        // better
+        assertThat(result).contains(3, 1, 5);
+        assertThat(result.size()).isEqualTo(3);
+
+        // assertThat(result).isSorted(); // check if it is sorted
+    }
 }
