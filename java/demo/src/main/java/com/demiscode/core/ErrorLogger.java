@@ -1,12 +1,11 @@
 package com.demiscode.core;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.UUID;
 
 public class ErrorLogger {
     private String lastError;
 
-    private List<String> logHistory = new ArrayList<>();
+    public ErrorLoggedListner listner;
 
     public String getLastError() {
         return lastError;
@@ -17,15 +16,16 @@ public class ErrorLogger {
     }
 
     public void log(String error) {
-        if (error == null)
-            throw new NullPointerException();
+
+        if (error == null || error.isEmpty() || error.isBlank())
+            throw new IllegalArgumentException("Null error value");
 
         this.lastError = error;
 
         // write the log to storage
         // ...
 
-        logHistory.add(error);
+        listner.onErrorLogged(this, UUID.randomUUID());
 
     }
 }
