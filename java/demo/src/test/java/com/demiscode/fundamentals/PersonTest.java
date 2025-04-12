@@ -33,14 +33,14 @@ public class PersonTest {
     @Test
     public void shouldThrowIllegalArgumentExceptionIfAgeIs0() {
         assertThrows(IllegalArgumentException.class, () -> {
-            var person = new Person("Demis", 0);
+            new Person("Demis", 0);
         });
     }
 
     @Test
     public void shouldThrowIllegalArgumentExceptionIfAgeIsUnder0() {
         assertThrows(IllegalArgumentException.class, () -> {
-            var person = new Person("Demis", -1);
+            new Person("Demis", -1);
         });
     }
 

@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.demiscode.fundamentals.Calculator;
-
 public class AppTest {
     @Test
     void testName() {
