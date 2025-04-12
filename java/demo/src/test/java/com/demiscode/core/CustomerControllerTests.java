@@ -7,10 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.demiscode.core.CustomerController;
-import com.demiscode.core.NotFound;
-import com.demiscode.core.Ok;
-
 @DisplayName("Customer Controller Tests")
 public class CustomerControllerTests {
 
