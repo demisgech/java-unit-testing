@@ -1,4 +1,4 @@
-package com.demiscode.coretechniques;
+package com.demiscode.core;
 
 public class CustomerController {
     public ActionResult getCustomer(int id) {

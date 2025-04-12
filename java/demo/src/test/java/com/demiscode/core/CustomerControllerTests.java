@@ -1,4 +1,4 @@
-package com.demiscode.coretechniques;
+package com.demiscode.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -6,6 +6,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import com.demiscode.core.CustomerController;
+import com.demiscode.core.NotFound;
+import com.demiscode.core.Ok;
 
 @DisplayName("Customer Controller Tests")
 public class CustomerControllerTests {
