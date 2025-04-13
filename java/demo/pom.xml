@@ -21,22 +21,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <!-- Use the latest JUnit 5 version -->
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.12.2</version>      <!-- Use the latest JUnit 5 version -->
-      <scope>test</scope>
-    </dependency>
-
-    <!-- Optional: JUnit Platform Launcher -->
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-launcher</artifactId>
-      <version>1.12.2</version>      <!-- Use the latest JUnit version -->
+      <version>5.12.2</version>
       <scope>test</scope>
     </dependency>
 
@@ -44,6 +29,7 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
       <version>5.12.2</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -57,7 +43,6 @@
   <build>
     <pluginManagement>
       <plugins>
-        <!-- Maven Surefire Plugin for JUnit 5 support -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>

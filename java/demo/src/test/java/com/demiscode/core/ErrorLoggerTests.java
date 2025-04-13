@@ -16,8 +16,8 @@ public class ErrorLoggerTests {
     public void log_whenCalled_setTheLastErrorProperty() {
         var logger = new ErrorLogger();
 
-        // Event listner
-        logger.listner = (event, args) -> {
+        // Event listner -> subscribe the event
+        logger.listner = (sender, eventId) -> {
         };
 
         logger.log("a");
